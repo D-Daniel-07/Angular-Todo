@@ -16,8 +16,7 @@ export class EventListComponent implements OnInit{
   removeEvent(index: number) {
     if (index >= 0 && index < this.eventList.length) {
       this.eventList.splice(index, 1);
-  
-      // Use the service to update the event data
+
       this.eventDataService.setEventData(this.eventList);
     }
   }
@@ -41,7 +40,6 @@ export class EventListComponent implements OnInit{
 
 
   ngOnInit(): void {
-    // Use the service to get the event data
     this.eventList = this.eventDataService.getEventData();
   }
   
