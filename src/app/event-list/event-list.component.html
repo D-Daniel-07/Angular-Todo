@@ -10,7 +10,8 @@
       <div class="lineOne">
       <p >{{events.name}}</p>
       <div class="buttons">
-      <button class="view" (click)="selectEvent(i)" [routerLink]="['event-details']">
+      <button class="update" (click)="updateEvent(i)"><i class="fa-solid fa-pencil"></i></button>
+      <button class="view" (click)="selectEvent(i)">
         <i class="far fa-eye"></i>
       </button>
       <button class="delbtn" (click)="removeEvent(i)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M1 16C1 17.1 1.9 18 3 18H11C12.1 18 13 17.1 13 16V4H1V16ZM14 1H10.5L9.5 0H4.5L3.5 1H0V3H14V1Z" fill="black"/></svg></button>
@@ -37,3 +38,15 @@
       </div>
   </div>
 </div>
+
+<form class="updateForm"(ngSubmit)="saveEvent()" [formGroup]="updateForm" *ngIf="showForm">
+  Event Name <br>
+  <input class="form" type="text" placeholder="Enter Event Name" formControlName="name"><br>
+  Event Host <br>
+  <input type="text" placeholder="Enter Event Host" formControlName="host"><br>
+  Event Location<br>
+  <input type="text" placeholder="Enter Event Location" formControlName="location"><br>
+  Event Date<br>
+  <input type="date" placeholder="Enter Event Date" formControlName="date"><br>
+  <button class="btn" type="submit" >Save event</button>
+</form>

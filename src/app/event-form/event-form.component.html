@@ -1,13 +1,15 @@
-<div class="eventForm">
-Event Name <br>
-<input class="form" type="text" placeholder="Enter Event Name" [(ngModel)]="newName"><br>
-Event Host <br>
-<input type="text" placeholder="Enter Event Host" [(ngModel)]="newHost"><br>
-Event Location<br>
-<input type="text" placeholder="Enter Event Location" [(ngModel)]="newLocation"><br>
-Event Date<br>
-<input type="date" placeholder="Enter Event Date" [(ngModel)]="newDate"><br>
-<button class="btn" type="submit" (click)="addEvent()" [routerLink]="['']">Add event</button>
-</div>
+<form class="eventForm" [formGroup]="eventForm" (ngSubmit)="addEvent()">
+    Event Name <br>
+    <input class="form" type="text" placeholder="Enter Event Name" formControlName="name"><br>
+    
+    Event Host <br>
+    <input type="text" placeholder="Enter Event Host" formControlName="host"><br>
+    Event Location<br>
+    <input type="text" placeholder="Enter Event Location" formControlName="location"><br>
+    Event Date<br>
+    <input type="date" placeholder="Enter Event Date" formControlName="date"><br>
+    <button class="btn" type="submit" >Add event</button>
+</form>
+  
 <app-event-list [eventList]="eventList" class="hidden"></app-event-list>
 <app-todays-event [eventList]="eventList" class="hidden"></app-todays-event>

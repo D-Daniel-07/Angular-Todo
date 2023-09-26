@@ -1,43 +1,37 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input ,OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { EventDataService } from '../service/event.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-event-form',
   templateUrl: './event-form.component.html',
   styleUrls: ['./event-form.component.css']
 })
-export class EventFormComponent {
-  selectedEvent:any={};
+export class EventFormComponent implements OnInit{
+  eventForm!: FormGroup;
   eventList: any[] = [];
-  newName: any = '';
-  newHost: any = '';
-  newLocation: any = '';
-  newDate: any = '';
 
   addEvent() {
-    if (this.newName === '' || this.newHost === '' || this.newLocation === '' || this.newDate === '') {
-      alert("Enter All Event Details");
-    } else {
-      const newEvent = {
-        name: this.newName,
-        host: this.newHost,
-        location: this.newLocation,
-        date: this.newDate
-      };
-      alert("Event Added Successfully");
+    if (this.eventForm.valid) {
+      const newEvent = this.eventForm.value;
+      alert('Event Added Successfully');
       this.eventDataService.setEventData([...this.eventList, newEvent]);
-      this.newName = '';
-      this.newHost = '';
-      this.newLocation = '';
-      this.newDate = '';
+      this.eventForm.reset();
+    } else {
+      alert('Enter All Event Details');
     }
   }
-  constructor(private eventDataService: EventDataService) { }
+  constructor(private fb: FormBuilder,private eventDataService: EventDataService) {}
 
   ngOnInit(): void {
     this.eventList = this.eventDataService.getEventData();
+    this.eventForm = this.fb.group({
+      name: ['', Validators.required],
+      host: ['', Validators.required],
+      location: ['', Validators.required],
+      date: ['', Validators.required],
+    });
   }
-  
 }
 
 

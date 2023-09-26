@@ -79,12 +79,11 @@ p{
     height: 27px;
     padding: 8px;
     border-radius: 4px;
-    margin-top: 18px;
+    margin-top: 21px;
     margin-left: 290px;
 }
 .buttons{
-    padding: 0px;
-    
+    display: flex;
 }
 .hidden{
     display: none;
@@ -127,7 +126,6 @@ p{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
 }
 .detailshere1{
     padding-left:15px;
@@ -154,4 +152,35 @@ p{
     height: 30px;
     margin-right: 75px;
     margin-top: 15px;
+}
+.update{
+    margin-right: -270px;
+    height:27px;
+    margin-top: 22px;
+}
+input[type=text]{
+    height: 40px;
+    width: 400px;
+}
+.updateForm{
+    text-align: center;
+    font-size: 30px;
+}
+input[type=date]{
+    height: 40px;
+    width: 400px;
+}
+.btn{
+    width:108px;
+    height:36px;
+    margin-left:15px;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #294DA8;
+}
+.hidden{
+    display: none;
 }
