@@ -1,0 +1,26 @@
+input[type=text]{
+    height: 40px;
+    width: 400px;
+}
+.eventForm{
+    text-align: center;
+    font-size: 30px;
+}
+input[type=date]{
+    height: 40px;
+    width: 400px;
+}
+.btn{
+    width:108px;
+    height:36px;
+    margin-left:15px;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #294DA8;
+}
+.hidden{
+    display: none;
+}

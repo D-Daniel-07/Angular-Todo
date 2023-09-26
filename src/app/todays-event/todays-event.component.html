@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="header">
+    <h2>TODAY'S EVENTS</h2>
+    <h2 class="today_date">{{ today }}</h2>
+  </div>
+  
+  <h3 class="empty" *ngIf="!eventList.length">No Events</h3>
+  <ul>
+    <ng-container *ngFor="let event of eventList; let i = index;">
+    <li *ngIf="compareDates(event.date,today)">
+      <div class="lineOne">
+        <p>{{ event.name }}</p>
+
+      </div>
+      <div class="lineTwo">
+        <p>{{ event.date }}</p>
+      </div>
+    </li>
+    </ng-container>
+  </ul>
+</div>

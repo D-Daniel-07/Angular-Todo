@@ -1,0 +1,18 @@
+li{
+    display: inline;
+    justify-content: space-around;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: rgba(217, 217, 217, 0.28);
+}
+.hidden
+{
+    display: none;
+}
